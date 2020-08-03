@@ -4,6 +4,12 @@
 import os
 import csv
 
+
+total_dollars = 0
+losses = 0 
+date = ""
+
+
 #Assign the csv file path to an object
 csvpath = os.path.join(r"C:\Users\Mr. Me Too\Desktop\python-challenge\PyBank\Resources\budget_data.csv")
 #open the csv with a "with statement"
@@ -20,23 +26,25 @@ with open (csvpath) as csvfile:
     
     budgetdata = [data for data in csvreader]
 #Get the total number of months = the 'len' function 
-    months= len(budgetdata)
-    #print(f'Total Months: {months}')
+    
 #Unzip date and dollars into two seperate list
     #print(budgetdata)
     date,dollars = zip(*budgetdata)
-    int(dollars)
-    for dollar in dollars:
-        if dollar > 0:
-            profits.append(dollar)
-            print((profits)
-        # elif dollar < 0:
-        #     losses.append(dollar)
-        #     print(losses)
-        
-#check how the file output to determine how to loop through the csv.
-#then make a list for each piece of dats and append 
-#with a loop
+    list_dollars = list(dollars)
+    list_date = list(date)
+# Manipulate dollar and date list for Calculations
+    #months = len(date)
+    #print(f'Total Months: {months}')
+    
+    profit = int(list_dollars[])
+    count = 0
+    
+
+    
+         
+
+    
+
 
 #Get net total amount of both Profit list and Losses list
 # total_profits = sum(profits)
