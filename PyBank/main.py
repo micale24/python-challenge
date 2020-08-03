@@ -5,13 +5,13 @@ import os
 import csv
 
 #Assign the csv file path to an object
-csvpath = os.path.join("..","Resources","budget_data.csv")
+csvpath = os.path.join(r"C:\Users\Mr. Me Too\Desktop\python-challenge\PyBank\Resources\budget_data.csv")
 #open the csv with a "with statement"
 with open (csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter= ',')
 
     csv_header = next(csvfile) #moves past the header
-    print(f"Header: {csv_header}")
+    #print(f"Header: {csv_header}")
 
     #List for different variables 
     budgetdata = []
@@ -19,15 +19,21 @@ with open (csvpath) as csvfile:
     losses = []
     
     budgetdata = [data for data in csvreader]
-    print(len(budgetdata))
+#Get the total number of months = the 'len' function 
     months= len(budgetdata)
-    
- 
-#Get the total number of months = the 'len' function
-    total_months = len(budgetdata) 
-    print(f'"The total number of months is: {months}")
-
-#Spilt the profit losses  column into two seperate list
+    #print(f'Total Months: {months}')
+#Unzip date and dollars into two seperate list
+    #print(budgetdata)
+    date,dollars = zip(*budgetdata)
+    int(dollars)
+    for dollar in dollars:
+        if dollar > 0:
+            profits.append(dollar)
+            print((profits)
+        # elif dollar < 0:
+        #     losses.append(dollar)
+        #     print(losses)
+        
 #check how the file output to determine how to loop through the csv.
 #then make a list for each piece of dats and append 
 #with a loop
@@ -79,7 +85,7 @@ with open (csvpath) as csvfile:
  
  
 
-----------------------------------------------
+# ----------------------------------------------
 
 #Py Poll Script
 
