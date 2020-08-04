@@ -10,37 +10,48 @@ csvpath = os.path.join(r"C:\Users\Mr. Me Too\Desktop\python-challenge\PyBank\Res
 with open (csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter= ',')
     csv_header = next(csvfile) #moves past the header
-    #List for different variables 
-    budgetdata = []
+#List store strings as integers 
     total = []
-    losses = []
-    
     budgetdata = [data for data in csvreader]
 #Unzip date and dollars into two seperate list
     date,dollars = zip(*budgetdata)
     list_dollars = list(dollars)
     list_date = list(date)
-# Manipulate dollar and date list for Calculations
-    ###months = len(date)
-    ####print(f'Total Months: {months}')
+# Manipulate dollar and date list into integers and strings for Calculations
+    months = len(date)
     for numbers in list_dollars:
         total.append(int(numbers))
+    Total = (sum(total)) 
+#Greatest increase in proftis and its date
+    great_profit = max(total)
+    Sgreat_profit = str(max(total))
+    where_Pdollars = list_dollars.index(Sgreat_profit)
+    what_Pdate = list_date[where_Pdollars]
 
-    Total = (sum(total))
-    ###print(f'Total: {Total}')
+    great_loss = min(total)
+    Sgreat_loss = str(min(total))
+    where_Ldollars = list_dollars.index(Sgreat_loss)
+    what_Ldate = list_date[where_Ldollars]
+#Finding the average of profits/loses entire time frame
 
-    
+    # average = Total/len(list_dollars)
+    # print(average)
+
+#exporting to text file
+# with open ("budegt_data_output.txt", "w") as bdo:
+    print ("Financail Analsysis", file =bdo)
+    print ("\n")
+    print (25*"-",file = bdo)
+    print (f"Total Months: {months}", file = bdo)
+    print (f"Total: {Total}", file = bdo)
+    print ("\n")
+    print (f"Average Change: ${average}", file = bdo}
+    print ("\n")
+    print (f"Greatest Increase in Progits: {what_Pdate} {Sgreat_profit}", file = bdo)
+    print ("\n")
+    print (f"Greatest Decrease in Progits: {what_Ldate} {Sgreat_loss}", file = bdo)
+       
         
- 
-
-
-
-
-        
-#Get net total amount of both Profit list and Losses list
-# total_profits = sum(profits)
-# total_loses = sum(losses)
-# total_cash = sum(profits)+sum(losses)
 
 #Get average of both Profit and Losses list
 # def average (#list):
@@ -50,27 +61,6 @@ with open (csvpath) as csvfile:
 #     total += numbers
 #   return total/length  
   
-#Find the row with the greatest increase/decrease and its date
-#  use dictionary csvdictionary to loop throgh dates and values
-#  then use a if statement for greatest increase/decrease and append to another
-#  list great_Increase =[] and great_ decrease =[]
-
-
-#Date format in "Feb-2013"
-
-#Dollar amount in "$00000" add "$" string
-
-#write output to a new text file
-# print to terminal
-
-# print (f'
-# Financail Analysis\n
-# -------------------------\n
-# Total Months: {total_months}\n+
-# Total: {total_cash}\n
-# Average Change: ${avg}\n
-# Greatest Increase in Profits:{great_increase/date}\n
-# Greatest Decrease in Profits: {great_decrease}')may have to use . format (key,value)
 
 # EXAMPLE
 # Financial Analysis
