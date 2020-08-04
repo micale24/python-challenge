@@ -34,22 +34,27 @@ with open (csvpath) as csvfile:
     what_Ldate = list_date[where_Ldollars]
 #Finding the average of profits/loses entire time frame
 
-    # average = Total/len(list_dollars)
-    # print(average)
+    average = Total/len(list_dollars)
+    print(average)
+
+    print ("Financail Analsysis")
+    print (25*"-")
+    print (f"Total Months: {months}")
+    print (f"Total: ${Total}")
+    print (f"Average Change: ${average}")
+    print (f"Greatest Increase in Progits: {what_Pdate} {Sgreat_profit}")
+    print (f"Greatest Decrease in Progits: {what_Ldate} {Sgreat_loss}")
+
 
 #exporting to text file
-# with open ("budegt_data_output.txt", "w") as bdo:
-    print ("Financail Analsysis", file =bdo)
-    print ("\n")
-    print (25*"-",file = bdo)
-    print (f"Total Months: {months}", file = bdo)
-    print (f"Total: {Total}", file = bdo)
-    print ("\n")
-    print (f"Average Change: ${average}", file = bdo}
-    print ("\n")
-    print (f"Greatest Increase in Progits: {what_Pdate} {Sgreat_profit}", file = bdo)
-    print ("\n")
-    print (f"Greatest Decrease in Progits: {what_Ldate} {Sgreat_loss}", file = bdo)
+    with open ("budegt_data_output.txt", "w") as bdo:
+        print ("Financail Analsysis", file =bdo)
+        print (25*"-",file = bdo)
+        print (f"Total Months: {months}", file = bdo)
+        print (f"Total: {Total}", file = bdo)
+        print (f"Average Change: ${average}", file = bdo)
+        print (f"Greatest Increase in Progits: {what_Pdate} {Sgreat_profit}", file = bdo)
+        print (f"Greatest Decrease in Progits: {what_Ldate} {Sgreat_loss}", file = bdo)
        
         
 
