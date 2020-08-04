@@ -6,7 +6,7 @@ import csv
 
 
 total_dollars = 0
-losses = 0 
+
 date = ""
 
 
@@ -21,31 +21,28 @@ with open (csvpath) as csvfile:
 
     #List for different variables 
     budgetdata = []
-    profits = []
+    total = []
     losses = []
     
     budgetdata = [data for data in csvreader]
-#Get the total number of months = the 'len' function 
-    
 #Unzip date and dollars into two seperate list
-    #print(budgetdata)
     date,dollars = zip(*budgetdata)
     list_dollars = list(dollars)
     list_date = list(date)
 # Manipulate dollar and date list for Calculations
-    #months = len(date)
-    #print(f'Total Months: {months}')
-    
-    profit = int(list_dollars[])
-    count = 0
-    
+    ###months = len(date)
+    ####print(f'Total Months: {months}')
+    for numbers in list_dollars:
+        total.append(int(numbers))
 
-    
-         
+    Total = (sum(total))
+    ###print(f'Total: {Total}')
 
-    
+    def avg_change(months,):
+        
 
 
+        
 #Get net total amount of both Profit list and Losses list
 # total_profits = sum(profits)
 # total_loses = sum(losses)
