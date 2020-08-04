@@ -3,22 +3,13 @@
 # For import the os and csv
 import os
 import csv
-
-
-total_dollars = 0
-
-date = ""
-
-
+import math
 #Assign the csv file path to an object
 csvpath = os.path.join(r"C:\Users\Mr. Me Too\Desktop\python-challenge\PyBank\Resources\budget_data.csv")
 #open the csv with a "with statement"
 with open (csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter= ',')
-
     csv_header = next(csvfile) #moves past the header
-    #print(f"Header: {csv_header}")
-
     #List for different variables 
     budgetdata = []
     total = []
@@ -38,8 +29,11 @@ with open (csvpath) as csvfile:
     Total = (sum(total))
     ###print(f'Total: {Total}')
 
-    def avg_change(months,):
+    
         
+ 
+
+
 
 
         
