@@ -21,6 +21,7 @@ with open (csvpath) as csvfile:
     months = len(date)
     for numbers in list_dollars:
         total.append(int(numbers))
+
     Total = (sum(total)) 
 #Greatest increase in proftis and its date
     great_profit = max(total)
@@ -35,8 +36,9 @@ with open (csvpath) as csvfile:
 #Finding the average of profits/loses entire time frame
 
     average = Total/len(list_dollars)
+    #Create a loop for the changes to each month
     print(average)
-
+#Final output
     print ("Financail Analsysis")
     print (25*"-")
     print (f"Total Months: {months}")
