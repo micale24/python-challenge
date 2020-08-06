@@ -4,6 +4,7 @@
 import os
 import csv
 import math
+
 #Assign the csv file path to an object
 csvpath = os.path.join(r"C:\Users\Mr. Me Too\Desktop\python-challenge\PyBank\Resources\budget_data.csv")
 #open the csv with a "with statement"
@@ -34,10 +35,20 @@ with open (csvpath) as csvfile:
     where_Ldollars = list_dollars.index(Sgreat_loss)
     what_Ldate = list_date[where_Ldollars]
 #Finding the average of profits/loses entire time frame
+    z = 1
+    i = 1
+    q = 0
+    av = []
+    while z < len(list_dollars):
+        a = list_dollars[i]-list_dollars[q]
+        av.append(a)
+        z+=1
+        i+=1
+        q+=1
+    average_change_p_l = sum(av)/len(x)
+    print(average_change_p_l)
 
-    average = Total/len(list_dollars)
-    #Create a loop for the changes to each month
-    print(average)
+
 #Final output
     print ("Financail Analsysis")
     print (25*"-")
