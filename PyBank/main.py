@@ -45,7 +45,7 @@ with open (csvpath) as csvfile:
         z+=1
         i+=1
         q+=1
-    average_change_p_l = sum(av)/len(x)
+    average_change_p_l = sum(av)/len(av)
     print(average_change_p_l)
 
 
