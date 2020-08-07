@@ -66,28 +66,6 @@ with open (csvpath) as csvfile:
         print (f"Total Months: {months}", file = bdo)
         print (f"Total: {Total}", file = bdo)
         print (f"Average Change: ${average_change_p_l}", file = bdo)
-        print (f"Greatest Increase in Progits: {what_Pdate} ${Sgreat_profit}", file = bdo)
-        print (f"Greatest Decrease in Progits: {what_Ldate} ${Sgreat_loss}", file = bdo)
+        print (f"Greatest Increase in Progits: {what_Pdate} $({Sgreat_profit})", file = bdo)
+        print (f"Greatest Decrease in Progits: {what_Ldate} $({Sgreat_loss})", file = bdo)
        
-        
-# ----------------------------------------------
-
-#Py Poll Script
-
-## For import the os and csv
-
-#Assign the csv file path to an object
-
-#open the csv with a "with statement"
-
-#Read and print to make sure your in the file the data 
-
-### Get the total number of votes cast
-
-#Seperate Candiates into a list
-
-#Calclulate the percentage of votes each candiate wont (Candiate votes/total)
-
-#Find the winner with the populare vote
-
-#write output to a new text file 
