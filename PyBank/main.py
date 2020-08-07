@@ -40,12 +40,12 @@ with open (csvpath) as csvfile:
     q = 0
     av = []
     while z < len(list_dollars):
-        a = list_dollars[i]-list_dollars[q]
+        a = total[i] - total[q]
         av.append(a)
         z+=1
         i+=1
         q+=1
-    average_change_p_l = sum(av)/len(av)
+    average_change_p_l = round(sum(av)/len(av),2)
     print(average_change_p_l)
 
 
@@ -54,9 +54,9 @@ with open (csvpath) as csvfile:
     print (25*"-")
     print (f"Total Months: {months}")
     print (f"Total: ${Total}")
-    print (f"Average Change: ${average}")
-    print (f"Greatest Increase in Progits: {what_Pdate} {Sgreat_profit}")
-    print (f"Greatest Decrease in Progits: {what_Ldate} {Sgreat_loss}")
+    print (f"Average Change: ${average_change_p_l}")
+    print (f"Greatest Increase in Progits: {what_Pdate} $({Sgreat_profit})")
+    print (f"Greatest Decrease in Progits: {what_Ldate} $({Sgreat_loss})")
 
 
 #exporting to text file
@@ -65,33 +65,11 @@ with open (csvpath) as csvfile:
         print (25*"-",file = bdo)
         print (f"Total Months: {months}", file = bdo)
         print (f"Total: {Total}", file = bdo)
-        print (f"Average Change: ${average}", file = bdo)
-        print (f"Greatest Increase in Progits: {what_Pdate} {Sgreat_profit}", file = bdo)
-        print (f"Greatest Decrease in Progits: {what_Ldate} {Sgreat_loss}", file = bdo)
+        print (f"Average Change: ${average_change_p_l}", file = bdo)
+        print (f"Greatest Increase in Progits: {what_Pdate} ${Sgreat_profit}", file = bdo)
+        print (f"Greatest Decrease in Progits: {what_Ldate} ${Sgreat_loss}", file = bdo)
        
         
-
-#Get average of both Profit and Losses list
-# def average (#list):
-#   length = len(#list)
-#   total = 0.0
-#   for numbers in profits:
-#     total += numbers
-#   return total/length  
-  
-
-# EXAMPLE
-# Financial Analysis
-# ----------------------------
-# Total Months: 86
-# Total: $38382578
-# Average  Change: $-2315.12
-# Greatest Increase in Profits: Feb-2012 ($1926159)
-# Greatest Decrease in Profits: Sep-2013 
-
- 
- 
-
 # ----------------------------------------------
 
 #Py Poll Script
