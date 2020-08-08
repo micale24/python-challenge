@@ -1,6 +1,5 @@
-
 #Py Me Up Charlie
-# For import the os and csv
+#For import the os and csv
 import os
 import csv
 import math
@@ -11,9 +10,11 @@ csvpath = os.path.join(r"C:\Users\Mr. Me Too\Desktop\python-challenge\PyBank\Res
 with open (csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter= ',')
     csv_header = next(csvfile) #moves past the header
+
 #List store strings as integers 
     total = []
     budgetdata = [data for data in csvreader]
+
 #Unzip date and dollars into two seperate list
     date,dollars = zip(*budgetdata)
     list_dollars = list(dollars)
@@ -48,7 +49,6 @@ with open (csvpath) as csvfile:
     average_change_p_l = round(sum(av)/len(av),2)
     print(average_change_p_l)
 
-
 #Final output
     print ("Financail Analsysis")
     print (25*"-")
@@ -57,8 +57,6 @@ with open (csvpath) as csvfile:
     print (f"Average Change: ${average_change_p_l}")
     print (f"Greatest Increase in Progits: {what_Pdate} $({Sgreat_profit})")
     print (f"Greatest Decrease in Progits: {what_Ldate} $({Sgreat_loss})")
-
-
 #exporting to text file
     with open ("budegt_data_output.txt", "w") as bdo:
         print ("Financail Analsysis", file =bdo)
@@ -68,4 +66,3 @@ with open (csvpath) as csvfile:
         print (f"Average Change: ${average_change_p_l}", file = bdo)
         print (f"Greatest Increase in Progits: {what_Pdate} $({Sgreat_profit})", file = bdo)
         print (f"Greatest Decrease in Progits: {what_Ldate} $({Sgreat_loss})", file = bdo)
-       
